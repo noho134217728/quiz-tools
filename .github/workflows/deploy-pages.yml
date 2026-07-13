@@ -33,12 +33,12 @@ jobs:
           python-version: "3.x"
 
       - name: Convert chem-quiz CSV to JSON
-        run: |
-          python chem-quiz/csv_to_json.py chem-quiz/reactions.csv chem-quiz/reactions.json
+        working-directory: chem-quiz
+        run: python csv_to_json.py
 
       - name: Convert inorganic-kakuron-quiz CSV to JSON
-        run: |
-          python inorganic-kakuron-quiz/csv_to_json.py inorganic-kakuron-quiz/reactions.csv inorganic-kakuron-quiz/reactions.json
+        working-directory: inorganic-kakuron-quiz
+        run: python csv_to_json.py
 
       - name: Disable Jekyll
         run: touch .nojekyll
