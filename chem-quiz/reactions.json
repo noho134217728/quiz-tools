@@ -1,0 +1,405 @@
+{
+  "meta": {
+    "title": "無機化学 化学反応式小テスト",
+    "version": "1.0.0",
+    "source": "reactions.csv"
+  },
+  "categoryLabels": {
+    "ア": "酸塩基反応：酸化物と水の反応",
+    "イ": "酸塩基反応：中和反応",
+    "ウ": "酸塩基反応：遊離反応",
+    "エ": "酸化還元反応",
+    "オ": "熱分解反応",
+    "カ": "沈殿生成反応",
+    "キ": "錯体生成反応"
+  },
+  "reactions": [
+    {
+      "id": "001",
+      "unit": "第I部",
+      "chapter": "酸化物と水",
+      "statement": "酸化カルシウムに水を加える。",
+      "equation": "CaO + H_2O -> Ca(OH)_2",
+      "categories": [
+        "ア"
+      ],
+      "note": "塩基性酸化物と水の反応",
+      "level": 1
+    },
+    {
+      "id": "002",
+      "unit": "第I部",
+      "chapter": "酸化物と水",
+      "statement": "三酸化硫黄を水に溶かす。",
+      "equation": "SO_3 + H_2O -> H_2SO_4",
+      "categories": [
+        "ア"
+      ],
+      "note": "酸性酸化物と水の反応",
+      "level": 1
+    },
+    {
+      "id": "003",
+      "unit": "第I部",
+      "chapter": "酸化物と水",
+      "statement": "二酸化炭素を水に溶かす。",
+      "equation": "CO_2 + H_2O -> H_2CO_3",
+      "categories": [
+        "ア"
+      ],
+      "note": "酸性酸化物と水の反応",
+      "level": 1
+    },
+    {
+      "id": "004",
+      "unit": "第I部",
+      "chapter": "酸化物と水",
+      "statement": "酸化ナトリウムに水を加える。",
+      "equation": "Na_2O + H_2O -> 2NaOH",
+      "categories": [
+        "ア"
+      ],
+      "note": "塩基性酸化物と水の反応",
+      "level": 1
+    },
+    {
+      "id": "005",
+      "unit": "第I部",
+      "chapter": "中和反応",
+      "statement": "塩酸と水酸化ナトリウム水溶液を混合する。",
+      "equation": "HCl + NaOH -> NaCl + H_2O",
+      "categories": [
+        "イ"
+      ],
+      "note": "強酸と強塩基の中和",
+      "level": 1
+    },
+    {
+      "id": "006",
+      "unit": "第I部",
+      "chapter": "中和反応",
+      "statement": "硫酸と水酸化カリウム水溶液を過不足なく反応させる。",
+      "equation": "H_2SO_4 + 2KOH -> K_2SO_4 + 2H_2O",
+      "categories": [
+        "イ"
+      ],
+      "note": "二価酸の中和",
+      "level": 1
+    },
+    {
+      "id": "007",
+      "unit": "第I部",
+      "chapter": "中和反応",
+      "statement": "二酸化炭素が水酸化ナトリウムに吸収される。",
+      "equation": "2NaOH + CO_2 -> Na_2CO_3 + H_2O",
+      "categories": [
+        "イ"
+      ],
+      "note": "酸性酸化物と塩基の中和",
+      "level": 2
+    },
+    {
+      "id": "008",
+      "unit": "第I部",
+      "chapter": "中和・沈殿",
+      "statement": "石灰水に二酸化炭素を少量通じる。",
+      "equation": "Ca(OH)_2 + CO_2 -> CaCO_3↓ + H_2O",
+      "categories": [
+        "イ",
+        "カ"
+      ],
+      "note": "中和と沈殿生成が同時に起こる",
+      "level": 2
+    },
+    {
+      "id": "009",
+      "unit": "第I部",
+      "chapter": "遊離反応",
+      "statement": "塩化ナトリウムに濃硫酸を加えて加熱する。",
+      "equation": "2NaCl + H_2SO_4 -> Na_2SO_4 + 2HCl↑",
+      "categories": [
+        "ウ"
+      ],
+      "note": "揮発性酸の遊離",
+      "level": 2
+    },
+    {
+      "id": "010",
+      "unit": "第I部",
+      "chapter": "遊離反応",
+      "statement": "炭酸ナトリウムに塩酸を加える。",
+      "equation": "Na_2CO_3 + 2HCl -> 2NaCl + H_2O + CO_2↑",
+      "categories": [
+        "ウ"
+      ],
+      "note": "弱酸の遊離",
+      "level": 2
+    },
+    {
+      "id": "011",
+      "unit": "第I部",
+      "chapter": "遊離反応",
+      "statement": "塩化アンモニウムに水酸化ナトリウムを加えて加熱する。",
+      "equation": "NH_4Cl + NaOH -> NaCl + H_2O + NH_3↑",
+      "categories": [
+        "ウ"
+      ],
+      "note": "弱塩基の遊離",
+      "level": 2
+    },
+    {
+      "id": "012",
+      "unit": "第I部",
+      "chapter": "遊離反応",
+      "statement": "硫化ナトリウムに塩酸を加える。",
+      "equation": "Na_2S + 2HCl -> 2NaCl + H_2S↑",
+      "categories": [
+        "ウ"
+      ],
+      "note": "弱酸の遊離",
+      "level": 2
+    },
+    {
+      "id": "013",
+      "unit": "第I部",
+      "chapter": "酸化還元反応",
+      "statement": "亜鉛に希塩酸を加える。",
+      "equation": "Zn + 2HCl -> ZnCl_2 + H_2↑",
+      "categories": [
+        "エ"
+      ],
+      "note": "金属が酸化され水素が発生する",
+      "level": 1
+    },
+    {
+      "id": "014",
+      "unit": "第I部",
+      "chapter": "酸化還元反応",
+      "statement": "銅に濃硝酸を加える。",
+      "equation": "Cu + 4HNO_3 -> Cu(NO_3)_2 + 2NO_2↑ + 2H_2O",
+      "categories": [
+        "エ"
+      ],
+      "note": "硝酸が酸化剤として働く",
+      "level": 3
+    },
+    {
+      "id": "015",
+      "unit": "第I部",
+      "chapter": "酸化還元反応",
+      "statement": "銅に熱濃硫酸を加える。",
+      "equation": "Cu + 2H_2SO_4 -> CuSO_4 + SO_2↑ + 2H_2O",
+      "categories": [
+        "エ"
+      ],
+      "note": "濃硫酸が酸化剤として働く",
+      "level": 3
+    },
+    {
+      "id": "016",
+      "unit": "第I部",
+      "chapter": "酸化還元反応",
+      "statement": "ヨウ化カリウム水溶液に塩素を通じる。",
+      "equation": "2KI + Cl_2 -> 2KCl + I_2",
+      "categories": [
+        "エ"
+      ],
+      "note": "ハロゲン単体の酸化力",
+      "level": 2
+    },
+    {
+      "id": "017",
+      "unit": "第I部",
+      "chapter": "酸化還元反応",
+      "statement": "過マンガン酸カリウムに濃塩酸を加える。",
+      "equation": "2KMnO_4 + 16HCl -> 2KCl + 2MnCl_2 + 5Cl_2↑ + 8H_2O",
+      "categories": [
+        "エ"
+      ],
+      "note": "塩素の発生",
+      "level": 3
+    },
+    {
+      "id": "018",
+      "unit": "第I部",
+      "chapter": "熱分解反応",
+      "statement": "炭酸カルシウムを強熱する。",
+      "equation": "CaCO_3 -> CaO + CO_2↑",
+      "categories": [
+        "オ"
+      ],
+      "note": "炭酸塩の熱分解",
+      "level": 1
+    },
+    {
+      "id": "019",
+      "unit": "第I部",
+      "chapter": "熱分解反応",
+      "statement": "炭酸水素ナトリウムを加熱する。",
+      "equation": "2NaHCO_3 -> Na_2CO_3 + H_2O + CO_2↑",
+      "categories": [
+        "オ"
+      ],
+      "note": "炭酸水素塩の熱分解",
+      "level": 1
+    },
+    {
+      "id": "020",
+      "unit": "第I部",
+      "chapter": "熱分解反応",
+      "statement": "塩素酸カリウムを二酸化マンガン触媒下で加熱する。",
+      "equation": "2KClO_3 -> 2KCl + 3O_2↑",
+      "categories": [
+        "オ",
+        "エ"
+      ],
+      "note": "熱分解であり酸化還元でもある",
+      "level": 2
+    },
+    {
+      "id": "021",
+      "unit": "第I部",
+      "chapter": "熱分解反応",
+      "statement": "酸化銀を加熱する。",
+      "equation": "2Ag_2O -> 4Ag + O_2↑",
+      "categories": [
+        "オ",
+        "エ"
+      ],
+      "note": "熱分解であり酸化還元でもある",
+      "level": 2
+    },
+    {
+      "id": "022",
+      "unit": "第I部",
+      "chapter": "熱分解反応",
+      "statement": "塩化アンモニウムを加熱する。",
+      "equation": "NH_4Cl -> NH_3 + HCl",
+      "categories": [
+        "オ"
+      ],
+      "note": "加熱による分解",
+      "level": 2
+    },
+    {
+      "id": "023",
+      "unit": "第II部",
+      "chapter": "沈殿生成反応",
+      "statement": "硝酸銀水溶液に塩化ナトリウム水溶液を加える。",
+      "equation": "AgNO_3 + NaCl -> AgCl↓ + NaNO_3",
+      "categories": [
+        "カ"
+      ],
+      "note": "塩化銀の白色沈殿",
+      "level": 1
+    },
+    {
+      "id": "024",
+      "unit": "第II部",
+      "chapter": "沈殿生成反応",
+      "statement": "塩化バリウム水溶液に硫酸ナトリウム水溶液を加える。",
+      "equation": "BaCl_2 + Na_2SO_4 -> BaSO_4↓ + 2NaCl",
+      "categories": [
+        "カ"
+      ],
+      "note": "硫酸バリウムの白色沈殿",
+      "level": 1
+    },
+    {
+      "id": "025",
+      "unit": "第II部",
+      "chapter": "沈殿生成反応",
+      "statement": "硝酸鉛水溶液にヨウ化カリウム水溶液を加える。",
+      "equation": "Pb(NO_3)_2 + 2KI -> PbI_2↓ + 2KNO_3",
+      "categories": [
+        "カ"
+      ],
+      "note": "ヨウ化鉛の黄色沈殿",
+      "level": 2
+    },
+    {
+      "id": "026",
+      "unit": "第II部",
+      "chapter": "沈殿生成反応",
+      "statement": "塩化鉄(III)水溶液に水酸化ナトリウム水溶液を加える。",
+      "equation": "FeCl_3 + 3NaOH -> Fe(OH)_3↓ + 3NaCl",
+      "categories": [
+        "カ"
+      ],
+      "note": "水酸化鉄(III)の赤褐色沈殿",
+      "level": 2
+    },
+    {
+      "id": "027",
+      "unit": "第II部",
+      "chapter": "沈殿生成反応",
+      "statement": "硫酸銅(II)水溶液に水酸化ナトリウム水溶液を加える。",
+      "equation": "CuSO_4 + 2NaOH -> Cu(OH)_2↓ + Na_2SO_4",
+      "categories": [
+        "カ"
+      ],
+      "note": "水酸化銅(II)の青白色沈殿",
+      "level": 2
+    },
+    {
+      "id": "028",
+      "unit": "第II部",
+      "chapter": "錯体生成反応",
+      "statement": "塩化銀の沈殿に過剰のアンモニア水を加える。",
+      "equation": "AgCl + 2NH_3 -> [Ag(NH_3)_2]^+ + Cl^-",
+      "categories": [
+        "キ"
+      ],
+      "note": "ジアンミン銀(I)イオンの生成",
+      "level": 2
+    },
+    {
+      "id": "029",
+      "unit": "第II部",
+      "chapter": "錯体生成反応",
+      "statement": "水酸化銅(II)の沈殿に過剰のアンモニア水を加える。",
+      "equation": "Cu(OH)_2 + 4NH_3 -> [Cu(NH_3)_4]^2+ + 2OH^-",
+      "categories": [
+        "キ"
+      ],
+      "note": "テトラアンミン銅(II)イオンの生成",
+      "level": 2
+    },
+    {
+      "id": "030",
+      "unit": "第II部",
+      "chapter": "錯体生成反応",
+      "statement": "水酸化アルミニウムの沈殿に過剰の水酸化ナトリウム水溶液を加える。",
+      "equation": "Al(OH)_3 + OH^- -> [Al(OH)_4]^-",
+      "categories": [
+        "キ"
+      ],
+      "note": "テトラヒドロキシドアルミン酸イオンの生成",
+      "level": 2
+    },
+    {
+      "id": "031",
+      "unit": "第II部",
+      "chapter": "錯体生成反応",
+      "statement": "水酸化亜鉛の沈殿に過剰のアンモニア水を加える。",
+      "equation": "Zn(OH)_2 + 4NH_3 -> [Zn(NH_3)_4]^2+ + 2OH^-",
+      "categories": [
+        "キ"
+      ],
+      "note": "テトラアンミン亜鉛(II)イオンの生成",
+      "level": 2
+    },
+    {
+      "id": "032",
+      "unit": "第II部",
+      "chapter": "錯体生成反応",
+      "statement": "鉄(III)イオンにシアン化物イオンを過剰に加える。",
+      "equation": "Fe^3+ + 6CN^- -> [Fe(CN)_6]^3-",
+      "categories": [
+        "キ"
+      ],
+      "note": "ヘキサシアニド鉄(III)酸イオンの生成",
+      "level": 3
+    }
+  ]
+}
