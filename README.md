@@ -6,8 +6,6 @@
 
 GitHub Pagesで公開している場合は、以下のリンクからアクセスできます。
 
-> `ユーザー名` と `リポジトリ名` は、自分のGitHub PagesのURLに合わせて置き換えてください。
-
 - [無機化学 化学反応式小テスト](https://noho134217728.github.io/quiz-tools/chem-quiz/)
 - [無機化学小テスト：各論編](https://noho134217728.github.io/quiz-tools/inorganic-kakuron-quiz/)
 
