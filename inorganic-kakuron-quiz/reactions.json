@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "title": "無機化学小テスト：各論編",
+    "source": "reactions.csv"
+  },
+  "affiliationLabels": {
+    "ア": "アルカリ金属元素",
+    "イ": "2族元素",
+    "ウ": "両性元素",
+    "エ": "遷移元素",
+    "オ": "14族元素",
+    "カ": "15族元素",
+    "キ": "16族元素",
+    "ク": "17族元素"
+  },
+  "reactions": [
+    {
+      "id": "001",
+      "unit": "第1章",
+      "chapter": "アルカリ金属元素",
+      "statement": "ナトリウムを水に入れる。",
+      "equation": "2Na + 2H_2O -> 2NaOH + H_2↑",
+      "affiliations": [
+        "ア"
+      ],
+      "note": "ナトリウムはアルカリ金属元素。水と激しく反応する。",
+      "level": 1
+    },
+    {
+      "id": "002",
+      "unit": "第1章",
+      "chapter": "アルカリ金属元素",
+      "statement": "酸化ナトリウムを水に加える。",
+      "equation": "Na_2O + H_2O -> 2NaOH",
+      "affiliations": [
+        "ア"
+      ],
+      "note": "アルカリ金属の酸化物は水と反応して強塩基を生じる。",
+      "level": 1
+    },
+    {
+      "id": "003",
+      "unit": "第1章",
+      "chapter": "アルカリ金属元素",
+      "statement": "炭酸水素ナトリウムを加熱する。",
+      "equation": "2NaHCO_3 -> Na_2CO_3 + CO_2↑ + H_2O",
+      "affiliations": [
+        "ア"
+      ],
+      "note": "炭酸水素ナトリウムの熱分解。",
+      "level": 1
+    },
+    {
+      "id": "004",
+      "unit": "第2章",
+      "chapter": "2族元素",
+      "statement": "炭酸カルシウムを強熱する。",
+      "equation": "CaCO_3 -> CaO + CO_2↑",
+      "affiliations": [
+        "イ"
+      ],
+      "note": "カルシウムは2族元素。炭酸塩の熱分解。",
+      "level": 1
+    },
+    {
+      "id": "005",
+      "unit": "第2章",
+      "chapter": "2族元素",
+      "statement": "酸化カルシウムに水を加える。",
+      "equation": "CaO + H_2O -> Ca(OH)_2",
+      "affiliations": [
+        "イ"
+      ],
+      "note": "生石灰から消石灰を生じる。",
+      "level": 1
+    },
+    {
+      "id": "006",
+      "unit": "第2章",
+      "chapter": "2族元素",
+      "statement": "石灰水に二酸化炭素を少量通じる。",
+      "equation": "Ca(OH)_2 + CO_2 -> CaCO_3↓ + H_2O",
+      "affiliations": [
+        "イ"
+      ],
+      "note": "炭酸カルシウムの白色沈殿を生じる。",
+      "level": 1
+    },
+    {
+      "id": "007",
+      "unit": "第3章",
+      "chapter": "両性元素",
+      "statement": "水酸化アルミニウムに塩酸を加える。",
+      "equation": "Al(OH)_3 + 3HCl -> AlCl_3 + 3H_2O",
+      "affiliations": [
+        "ウ"
+      ],
+      "note": "水酸化アルミニウムは酸に溶ける。",
+      "level": 1
+    },
+    {
+      "id": "008",
+      "unit": "第3章",
+      "chapter": "両性元素",
+      "statement": "水酸化アルミニウムに過剰の水酸化ナトリウム水溶液を加える。",
+      "equation": "Al(OH)_3 + OH^- -> [Al(OH)_4]^-",
+      "affiliations": [
+        "ウ"
+      ],
+      "note": "両性水酸化物は過剰の塩基に溶ける。",
+      "level": 2
+    },
+    {
+      "id": "009",
+      "unit": "第3章",
+      "chapter": "両性元素",
+      "statement": "水酸化亜鉛に過剰のアンモニア水を加える。",
+      "equation": "Zn(OH)_2 + 4NH_3 -> [Zn(NH_3)_4]^2+ + 2OH^-",
+      "affiliations": [
+        "ウ"
+      ],
+      "note": "亜鉛のアンミン錯イオンを生じる。",
+      "level": 2
+    },
+    {
+      "id": "010",
+      "unit": "第4章",
+      "chapter": "遷移元素",
+      "statement": "鉄(III)イオンに水酸化物イオンを加える。",
+      "equation": "Fe^3+ + 3OH^- -> Fe(OH)_3↓",
+      "affiliations": [
+        "エ"
+      ],
+      "note": "赤褐色沈殿を生じる。",
+      "level": 1
+    },
+    {
+      "id": "011",
+      "unit": "第4章",
+      "chapter": "遷移元素",
+      "statement": "銅(II)イオンに水酸化物イオンを加える。",
+      "equation": "Cu^2+ + 2OH^- -> Cu(OH)_2↓",
+      "affiliations": [
+        "エ"
+      ],
+      "note": "青白色沈殿を生じる。",
+      "level": 1
+    },
+    {
+      "id": "012",
+      "unit": "第4章",
+      "chapter": "遷移元素",
+      "statement": "銅に濃硝酸を加える。",
+      "equation": "Cu + 4HNO_3 -> Cu(NO_3)_2 + 2NO_2↑ + 2H_2O",
+      "affiliations": [
+        "エ"
+      ],
+      "note": "銅は濃硝酸に溶けて二酸化窒素を生じる。",
+      "level": 2
+    },
+    {
+      "id": "013",
+      "unit": "第5章",
+      "chapter": "14族元素",
+      "statement": "二酸化炭素を水酸化ナトリウム水溶液に吸収させる。",
+      "equation": "2NaOH + CO_2 -> Na_2CO_3 + H_2O",
+      "affiliations": [
+        "オ"
+      ],
+      "note": "炭素は14族元素。酸性酸化物と塩基の反応。",
+      "level": 1
+    },
+    {
+      "id": "014",
+      "unit": "第5章",
+      "chapter": "14族元素",
+      "statement": "二酸化ケイ素を水酸化ナトリウムと加熱する。",
+      "equation": "SiO_2 + 2NaOH -> Na_2SiO_3 + H_2O",
+      "affiliations": [
+        "オ"
+      ],
+      "note": "ケイ素は14族元素。二酸化ケイ素は酸性酸化物。",
+      "level": 2
+    },
+    {
+      "id": "015",
+      "unit": "第6章",
+      "chapter": "15族元素",
+      "statement": "アンモニアと塩化水素が反応する。",
+      "equation": "NH_3 + HCl -> NH_4Cl",
+      "affiliations": [
+        "カ"
+      ],
+      "note": "窒素は15族元素。白煙を生じる。",
+      "level": 1
+    },
+    {
+      "id": "016",
+      "unit": "第6章",
+      "chapter": "15族元素",
+      "statement": "銅に希硝酸を加える。",
+      "equation": "3Cu + 8HNO_3 -> 3Cu(NO_3)_2 + 2NO↑ + 4H_2O",
+      "affiliations": [
+        "カ"
+      ],
+      "note": "硝酸は窒素のオキソ酸。希硝酸では一酸化窒素を生じる。",
+      "level": 2
+    },
+    {
+      "id": "017",
+      "unit": "第7章",
+      "chapter": "16族元素",
+      "statement": "二酸化硫黄を水に溶かす。",
+      "equation": "SO_2 + H_2O -> H_2SO_3",
+      "affiliations": [
+        "キ"
+      ],
+      "note": "硫黄は16族元素。亜硫酸を生じる。",
+      "level": 1
+    },
+    {
+      "id": "018",
+      "unit": "第7章",
+      "chapter": "16族元素",
+      "statement": "硫化水素と二酸化硫黄を反応させる。",
+      "equation": "2H_2S + SO_2 -> 3S↓ + 2H_2O",
+      "affiliations": [
+        "キ"
+      ],
+      "note": "硫黄の析出を伴う酸化還元反応。",
+      "level": 2
+    },
+    {
+      "id": "019",
+      "unit": "第8章",
+      "chapter": "17族元素",
+      "statement": "塩素を水酸化ナトリウム水溶液に吸収させる。",
+      "equation": "Cl_2 + 2NaOH -> NaCl + NaClO + H_2O",
+      "affiliations": [
+        "ク"
+      ],
+      "note": "塩素は17族元素。冷希水酸化ナトリウムとの反応。",
+      "level": 2
+    },
+    {
+      "id": "020",
+      "unit": "第8章",
+      "chapter": "17族元素",
+      "statement": "塩素をヨウ化カリウム水溶液に通じる。",
+      "equation": "Cl_2 + 2KI -> 2KCl + I_2",
+      "affiliations": [
+        "ク"
+      ],
+      "note": "ハロゲン単体の酸化力の違いを利用した反応。",
+      "level": 2
+    }
+  ]
+}
