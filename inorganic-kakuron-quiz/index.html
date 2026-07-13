@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>無機化学小テスト：各論編</title>
+
+  <script>
+    window.MathJax = {
+      loader: {
+        load: ['[tex]/mhchem']
+      },
+      tex: {
+        packages: { '[+]': ['mhchem'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --paper: #ffffff;
+      --bg: #f3f4f6;
+      --accent: #111827;
+      --soft: #f9fafb;
+      --danger: #991b1b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Sans",
+        "Yu Gothic",
+        "Yu Gothic UI",
+        sans-serif;
+      line-height: 1.7;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .app {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      align-items: end;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .field input[type="text"],
+    .field input[type="number"],
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .field textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .col-2 { grid-column: span 2; }
+    .col-3 { grid-column: span 3; }
+    .col-4 { grid-column: span 4; }
+    .col-5 { grid-column: span 5; }
+    .col-6 { grid-column: span 6; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    .affiliation-box {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 14px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--soft);
+    }
+
+    .checkline {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-size: 14px;
+    }
+
+    .checkline input {
+      margin-top: 6px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .button {
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--accent);
+    }
+
+    .button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .status.error {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .quiz-paper {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+    }
+
+    .paper-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .paper-title {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .name-box {
+      min-width: 280px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: end;
+      white-space: nowrap;
+    }
+
+    .name-line {
+      border-bottom: 1px solid var(--ink);
+      min-height: 28px;
+    }
+
+    .legend {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 16px 0 20px;
+      background: var(--soft);
+      font-size: 14px;
+    }
+
+    .legend-title {
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .legend-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 16px;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 16px;
+      counter-reset: question;
+    }
+
+    .question-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      counter-increment: question;
+    }
+
+    .question-main {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .question-number::before {
+      content: "(" counter(question) ")";
+    }
+
+    .answer-lines {
+      display: grid;
+      gap: 10px;
+    }
+
+    .line-row {
+      display: grid;
+      grid-template-columns: 7.5em 1fr;
+      gap: 8px;
+      align-items: end;
+    }
+
+    .write-line {
+      border-bottom: 1px solid var(--ink);
+      min-height: 30px;
+    }
+
+    .affiliation-line {
+      display: grid;
+      grid-template-columns: 7.5em 240px 1fr;
+      gap: 8px;
+      align-items: end;
+    }
+
+    .affiliation-answer-box {
+      border-bottom: 1px solid var(--ink);
+      min-height: 30px;
+    }
+
+    .answer-paper {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 2px dashed var(--line);
+    }
+
+    .answer-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 14px;
+    }
+
+    .answer-table th,
+    .answer-table td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      vertical-align: top;
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .answer-table th {
+      background: var(--soft);
+      text-align: left;
+    }
+
+    .answer-table.without-chapter .col-no { width: 8%; }
+    .answer-table.without-chapter .col-equation { width: 55%; }
+    .answer-table.without-chapter .col-affiliation { width: 12%; }
+    .answer-table.without-chapter .col-note { width: 25%; }
+
+    .answer-table.with-chapter .col-no { width: 7%; }
+    .answer-table.with-chapter .col-chapter { width: 14%; }
+    .answer-table.with-chapter .col-equation { width: 45%; }
+    .answer-table.with-chapter .col-affiliation { width: 10%; }
+    .answer-table.with-chapter .col-note { width: 24%; }
+
+    .chem-equation {
+      display: inline-block;
+      font-size: 1.15em;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    mjx-container {
+      font-size: 108%;
+    }
+
+    .chem {
+      font-family:
+        "Times New Roman",
+        "Yu Gothic",
+        "Hiragino Sans",
+        serif;
+      font-size: 1.08em;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .empty {
+      padding: 40px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .col-2,
+      .col-3,
+      .col-4,
+      .col-5,
+      .col-6,
+      .col-8,
+      .col-12 {
+        grid-column: span 1;
+      }
+
+      .affiliation-box,
+      .legend-list {
+        grid-template-columns: 1fr;
+      }
+
+      .paper-header {
+        display: block;
+      }
+
+      .name-box {
+        margin-top: 16px;
+        min-width: auto;
+      }
+
+      .affiliation-line {
+        grid-template-columns: 7.5em 1fr;
+      }
+
+      .affiliation-line .small {
+        grid-column: 2;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      html,
+      body {
+        width: 100%;
+      }
+
+      body {
+        padding: 0;
+        background: white;
+        color: black;
+        font-size: 10.5pt;
+        line-height: 1.45;
+      }
+
+      .app {
+        max-width: none;
+        margin: 0;
+      }
+
+      .screen-only {
+        display: none !important;
+      }
+
+      .quiz-paper {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .paper-header {
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+      }
+
+      .paper-title {
+        font-size: 18pt;
+      }
+
+      .legend {
+        border-color: #999;
+        border-radius: 8px;
+        padding: 8px 10px;
+        margin: 8px 0 10px;
+        font-size: 8.5pt;
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      .legend-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2px 12px;
+      }
+
+      .question-list {
+        display: block;
+      }
+
+      .question-card {
+        display: block;
+        border-color: #999;
+        border-radius: 8px;
+        padding: 8px 10px;
+        margin: 0 0 8mm;
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      .question-main {
+        margin-bottom: 8px;
+      }
+
+      .answer-lines {
+        gap: 6px;
+      }
+
+      .line-row {
+        grid-template-columns: 7em 1fr;
+      }
+
+      .affiliation-line {
+        grid-template-columns: 7em 42mm 1fr;
+      }
+
+      .write-line,
+      .affiliation-answer-box {
+        min-height: 24px;
+      }
+
+      .answer-paper {
+        page-break-before: always;
+        break-before: page;
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .answer-paper h2 {
+        font-size: 16pt;
+        margin-bottom: 8px;
+      }
+
+      .answer-table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        font-size: 8.5pt;
+        line-height: 1.35;
+      }
+
+      .answer-table tr {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      .answer-table th,
+      .answer-table td {
+        border: 1px solid #999;
+        padding: 4px 5px;
+        vertical-align: middle;
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .answer-table th {
+        background: #f3f4f6 !important;
+        font-weight: 700;
+      }
+
+      .answer-table.without-chapter .col-no { width: 8%; }
+      .answer-table.without-chapter .col-equation { width: 55%; }
+      .answer-table.without-chapter .col-affiliation { width: 12%; }
+      .answer-table.without-chapter .col-note { width: 25%; }
+
+      .answer-table.with-chapter .col-no { width: 7%; }
+      .answer-table.with-chapter .col-chapter { width: 14%; }
+      .answer-table.with-chapter .col-equation { width: 45%; }
+      .answer-table.with-chapter .col-affiliation { width: 10%; }
+      .answer-table.with-chapter .col-note { width: 24%; }
+
+      .answer-equation,
+      .answer-note {
+        white-space: normal;
+      }
+
+      .answer-note {
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+      }
+
+      .answer-table mjx-container {
+        font-size: 86% !important;
+        max-width: 100%;
+      }
+
+      .button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <section class="screen-only">
+      <h1>無機化学小テスト：各論編</h1>
+      <p class="lead">問題文から化学反応式を書き、元素・物質の所属を記号で答える印刷用小テストを生成します。</p>
+
+      <div class="panel">
+        <h2>出題設定</h2>
+        <div class="grid">
+          <div class="field col-5">
+            <label for="quizTitle">テスト名</label>
+            <input id="quizTitle" type="text" value="無機化学小テスト：各論編" />
+          </div>
+
+          <div class="field col-2">
+            <label for="questionCount">出題数</label>
+            <input id="questionCount" type="number" min="1" value="10" />
+          </div>
+
+          <div class="field col-2">
+            <label for="seedInput">乱数シード</label>
+            <input id="seedInput" type="text" placeholder="空欄なら自動" />
+          </div>
+
+          <div class="field col-3">
+            <label for="matchMode">所属の抽出条件</label>
+            <select id="matchMode">
+              <option value="any">選択所属を1つ以上含む</option>
+              <option value="all">選択所属をすべて含む</option>
+              <option value="exact">選択所属と完全一致</option>
+            </select>
+          </div>
+
+          <div class="field col-12">
+            <label>出題所属</label>
+            <div id="affiliationBox" class="affiliation-box"></div>
+          </div>
+
+          <div class="field col-3">
+            <label>表示オプション</label>
+            <label class="checkline"><input id="showLegend" type="checkbox" checked /> 所属記号表を問題用紙に表示する</label>
+            <label class="checkline"><input id="showAnswer" type="checkbox" checked /> 解答用紙も生成する</label>
+          </div>
+
+          <div class="field col-3">
+            <label>並び順</label>
+            <label class="checkline"><input id="shuffleQuestions" type="checkbox" checked /> 問題をシャッフルする</label>
+            <label class="checkline"><input id="showChapter" type="checkbox" /> 解答に章・単元を表示する</label>
+          </div>
+
+          <div class="field col-6">
+            <label for="fileInput">データ読み込み</label>
+            <input id="fileInput" type="file" accept=".json,.csv,application/json,text/csv" />
+            <div class="small">通常は reactions.json を自動で読み込みます。ブラウザで直接開く場合は、ここから reactions.csv または reactions.json を選択してください。</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="button" id="generateButton">小テストを生成</button>
+          <button class="button secondary" id="selectAllButton">所属を全選択</button>
+          <button class="button secondary" id="clearButton">所属を全解除</button>
+          <button class="button secondary" id="printButton">印刷</button>
+        </div>
+        <div id="status" class="status"></div>
+      </div>
+    </section>
+
+    <main id="output" class="quiz-paper">
+      <div class="empty">出題設定を選んで「小テストを生成」を押してください。</div>
+    </main>
+  </div>
+
+  <script>
+    const AFFILIATION_LABELS = {
+      "ア": "アルカリ金属元素",
+      "イ": "2族元素",
+      "ウ": "両性元素",
+      "エ": "遷移元素",
+      "オ": "14族元素",
+      "カ": "15族元素",
+      "キ": "16族元素",
+      "ク": "17族元素",
+    };
+
+    const SAMPLE_DATA = {
+      meta: {
+        title: "無機化学小テスト：各論編",
+        source: "内蔵サンプル",
+      },
+      affiliationLabels: AFFILIATION_LABELS,
+      reactions: [
+        {
+          id: "sample-001",
+          unit: "第1章",
+          chapter: "アルカリ金属元素",
+          statement: "ナトリウムを水に入れる。",
+          equation: "2Na + 2H_2O -> 2NaOH + H_2↑",
+          affiliations: ["ア"],
+          note: "ナトリウムはアルカリ金属元素。水と激しく反応する。",
+          level: 1,
+        },
+        {
+          id: "sample-002",
+          unit: "第2章",
+          chapter: "2族元素",
+          statement: "炭酸カルシウムを強熱する。",
+          equation: "CaCO_3 -> CaO + CO_2↑",
+          affiliations: ["イ"],
+          note: "カルシウムは2族元素。炭酸塩の熱分解。",
+          level: 1,
+        },
+        {
+          id: "sample-003",
+          unit: "第3章",
+          chapter: "両性元素",
+          statement: "水酸化アルミニウムに水酸化ナトリウム水溶液を加える。",
+          equation: "Al(OH)_3 + OH^- -> [Al(OH)_4]^-",
+          affiliations: ["ウ"],
+          note: "アルミニウムは両性元素。過剰の塩基に溶ける。",
+          level: 2,
+        },
+        {
+          id: "sample-004",
+          unit: "第4章",
+          chapter: "遷移元素",
+          statement: "硫酸銅(II)水溶液に水酸化ナトリウム水溶液を加える。",
+          equation: "Cu^2+ + 2OH^- -> Cu(OH)_2↓",
+          affiliations: ["エ"],
+          note: "銅は遷移元素。青白色沈殿を生じる。",
+          level: 1,
+        },
+        {
+          id: "sample-005",
+          unit: "第5章",
+          chapter: "14族元素",
+          statement: "二酸化ケイ素を水酸化ナトリウムと加熱する。",
+          equation: "SiO_2 + 2NaOH -> Na_2SiO_3 + H_2O",
+          affiliations: ["オ"],
+          note: "ケイ素は14族元素。酸性酸化物として塩基と反応する。",
+          level: 2,
+        },
+        {
+          id: "sample-006",
+          unit: "第6章",
+          chapter: "15族元素",
+          statement: "アンモニアと塩化水素が反応する。",
+          equation: "NH_3 + HCl -> NH_4Cl",
+          affiliations: ["カ"],
+          note: "窒素は15族元素。アンモニアは塩基性を示す。",
+          level: 1,
+        },
+        {
+          id: "sample-007",
+          unit: "第7章",
+          chapter: "16族元素",
+          statement: "二酸化硫黄を水に溶かす。",
+          equation: "SO_2 + H_2O -> H_2SO_3",
+          affiliations: ["キ"],
+          note: "硫黄は16族元素。亜硫酸を生じる。",
+          level: 1,
+        },
+        {
+          id: "sample-008",
+          unit: "第8章",
+          chapter: "17族元素",
+          statement: "塩素をヨウ化カリウム水溶液に通じる。",
+          equation: "Cl_2 + 2KI -> 2KCl + I_2",
+          affiliations: ["ク"],
+          note: "塩素は17族元素。酸化力によりヨウ素を遊離する。",
+          level: 2,
+        }
+      ]
+    };
+
+    let quizData = SAMPLE_DATA;
+    let currentQuestions = [];
+
+    const elements = {
+      affiliationBox: document.getElementById("affiliationBox"),
+      status: document.getElementById("status"),
+      output: document.getElementById("output"),
+      generateButton: document.getElementById("generateButton"),
+      selectAllButton: document.getElementById("selectAllButton"),
+      clearButton: document.getElementById("clearButton"),
+      printButton: document.getElementById("printButton"),
+      fileInput: document.getElementById("fileInput"),
+    };
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function toMhchem(raw) {
+      return String(raw ?? "")
+        .trim()
+        .replaceAll("→", "->")
+        .replaceAll("=>", "->")
+        .replaceAll("＝", "=")
+        .replace(/_([0-9]+)/g, "$1")
+        .replaceAll("↓", " v")
+        .replaceAll("↑", " ^");
+    }
+
+    function formatChem(raw) {
+      const body = escapeHtml(toMhchem(raw));
+      return `<span class="chem-equation">\\(\\ce{${body}}\\)</span>`;
+    }
+
+    function typesetMath(target = document.body) {
+      if (!window.MathJax) return;
+
+      if (window.MathJax.typesetPromise) {
+        if (window.MathJax.typesetClear) {
+          window.MathJax.typesetClear([target]);
+        }
+
+        window.MathJax.typesetPromise([target]).catch(error => {
+          console.error("MathJax typeset failed:", error);
+        });
+      } else {
+        setTimeout(() => typesetMath(target), 100);
+      }
+    }
+
+    function normalizeAffiliationToken(token) {
+      return String(token ?? "")
+        .trim()
+        .replaceAll("（", "(")
+        .replaceAll("）", ")")
+        .replace(/[()\s]/g, "");
+    }
+
+    function splitAffiliations(raw) {
+      if (Array.isArray(raw)) {
+        return raw.map(normalizeAffiliationToken).filter(Boolean);
+      }
+      return String(raw ?? "")
+        .split(/[;,|、，\s]+/)
+        .map(normalizeAffiliationToken)
+        .filter(Boolean);
+    }
+
+    function normalizeReaction(item, index) {
+      const rawAffiliations = item.affiliations ?? item.affiliation ?? item.categories ?? item.category ?? "";
+      const affiliations = splitAffiliations(rawAffiliations);
+      return {
+        id: item.id || `row-${index + 1}`,
+        unit: item.unit || "",
+        chapter: item.chapter || "",
+        statement: item.statement || "",
+        equation: item.equation || "",
+        affiliations,
+        note: item.note || "",
+        level: item.level === "" || item.level == null ? null : Number(item.level),
+      };
+    }
+
+    function validateData(data) {
+      if (!data || !Array.isArray(data.reactions)) {
+        throw new Error("reactions 配列が見つかりません。");
+      }
+
+      const reactions = data.reactions.map(normalizeReaction);
+      const invalidRows = reactions.filter(item => !item.statement || !item.equation || item.affiliations.length === 0);
+      if (invalidRows.length > 0) {
+        throw new Error("statement / equation / affiliations が空の行があります。");
+      }
+
+      const affiliationLabels = data.affiliationLabels || data.categoryLabels || AFFILIATION_LABELS;
+      for (const item of reactions) {
+        for (const affiliation of item.affiliations) {
+          if (!affiliationLabels[affiliation]) {
+            throw new Error(`未定義の所属記号があります: ${affiliation}`);
+          }
+        }
+      }
+
+      return {
+        meta: data.meta || {},
+        affiliationLabels,
+        reactions,
+      };
+    }
+
+    function setStatus(message, isError = false) {
+      elements.status.textContent = message;
+      elements.status.classList.toggle("error", isError);
+    }
+
+    function buildAffiliationControls() {
+      const labels = quizData.affiliationLabels || AFFILIATION_LABELS;
+      elements.affiliationBox.innerHTML = Object.entries(labels).map(([symbol, label]) => `
+        <label class="checkline">
+          <input type="checkbox" name="affiliation" value="${escapeHtml(symbol)}" checked>
+          <span><strong>(${escapeHtml(symbol)})</strong>${escapeHtml(label)}</span>
+        </label>
+      `).join("");
+    }
+
+    function getSelectedAffiliations() {
+      return Array.from(document.querySelectorAll('input[name="affiliation"]:checked')).map(input => input.value);
+    }
+
+    function hashString(str) {
+      let hash = 2166136261;
+      for (let i = 0; i < str.length; i++) {
+        hash ^= str.charCodeAt(i);
+        hash = Math.imul(hash, 16777619);
+      }
+      return hash >>> 0;
+    }
+
+    function mulberry32(seed) {
+      return function() {
+        let t = seed += 0x6D2B79F5;
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function shuffle(array, random) {
+      const result = [...array];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function sameSet(a, b) {
+      if (a.length !== b.length) return false;
+      const setA = new Set(a);
+      return b.every(value => setA.has(value));
+    }
+
+    function filterReactions() {
+      const selected = getSelectedAffiliations();
+      const mode = document.getElementById("matchMode").value;
+      if (selected.length === 0) return [];
+
+      return quizData.reactions.filter(item => {
+        if (mode === "all") {
+          return selected.every(affiliation => item.affiliations.includes(affiliation));
+        }
+        if (mode === "exact") {
+          return sameSet(item.affiliations, selected);
+        }
+        return item.affiliations.some(affiliation => selected.includes(affiliation));
+      });
+    }
+
+    function affiliationText(affiliations, withLabel = false) {
+      const labels = quizData.affiliationLabels || AFFILIATION_LABELS;
+      return affiliations.map(symbol => {
+        if (!withLabel) return `(${symbol})`;
+        return `(${symbol})${labels[symbol] || ""}`;
+      }).join("、");
+    }
+
+    function buildLegend() {
+      if (!document.getElementById("showLegend").checked) return "";
+      const labels = quizData.affiliationLabels || AFFILIATION_LABELS;
+      return `
+        <section class="legend">
+          <div class="legend-title">所属記号群</div>
+          <div class="legend-list">
+            ${Object.entries(labels).map(([symbol, label]) => `
+              <div><strong>(${escapeHtml(symbol)})</strong>${escapeHtml(label)}</div>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function buildQuestionHtml(questions) {
+      return `
+        <section class="question-list">
+          ${questions.map(item => `
+            <article class="question-card">
+              <div class="question-main">
+                <div class="question-number"></div>
+                <div>${escapeHtml(item.statement)}</div>
+              </div>
+              <div class="answer-lines">
+                <div class="line-row">
+                  <div>化学反応式：</div>
+                  <div class="write-line"></div>
+                </div>
+                <div class="affiliation-line">
+                  <div>所属記号：</div>
+                  <div class="affiliation-answer-box"></div>
+                  <div class="small">複数回答可</div>
+                </div>
+              </div>
+            </article>
+          `).join("")}
+        </section>
+      `;
+    }
+
+    function buildAnswerHtml(questions) {
+      if (!document.getElementById("showAnswer").checked) return "";
+      const showChapter = document.getElementById("showChapter").checked;
+
+      return `
+        <section class="answer-paper">
+          <h2>解答</h2>
+          <table class="answer-table ${showChapter ? "with-chapter" : "without-chapter"}">
+            <colgroup>
+              <col class="col-no">
+              ${showChapter ? `<col class="col-chapter">` : ""}
+              <col class="col-equation">
+              <col class="col-affiliation">
+              <col class="col-note">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="answer-no">番号</th>
+                ${showChapter ? `<th class="answer-chapter">単元</th>` : ""}
+                <th class="answer-equation-head">化学反応式</th>
+                <th class="answer-affiliation-head">所属</th>
+                <th class="answer-note-head">備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${questions.map((item, index) => `
+                <tr>
+                  <td class="answer-no">(${index + 1})</td>
+                  ${showChapter ? `<td class="answer-chapter">${escapeHtml([item.unit, item.chapter].filter(Boolean).join(" / "))}</td>` : ""}
+                  <td class="answer-equation">${formatChem(item.equation)}</td>
+                  <td class="answer-affiliation">${escapeHtml(affiliationText(item.affiliations))}</td>
+                  <td class="answer-note">${escapeHtml(item.note || "")}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </section>
+      `;
+    }
+
+    function generateQuiz() {
+      const candidates = filterReactions();
+      const countInput = Number(document.getElementById("questionCount").value);
+      const count = Number.isFinite(countInput) && countInput > 0 ? Math.floor(countInput) : 10;
+      const seedText = document.getElementById("seedInput").value.trim() || String(Date.now());
+      const random = mulberry32(hashString(seedText));
+
+      if (candidates.length === 0) {
+        setStatus("条件に合う問題がありません。所属の選択条件を確認してください。", true);
+        return;
+      }
+
+      const shouldShuffle = document.getElementById("shuffleQuestions").checked;
+      const ordered = shouldShuffle ? shuffle(candidates, random) : [...candidates];
+      currentQuestions = ordered.slice(0, Math.min(count, ordered.length));
+
+      const title = document.getElementById("quizTitle").value.trim() || "無機化学小テスト：各論編";
+      const dateText = new Date().toLocaleDateString("ja-JP");
+      const selectedText = getSelectedAffiliations().map(symbol => `(${symbol})`).join(" ");
+
+      elements.output.innerHTML = `
+        <section>
+          <header class="paper-header">
+            <div>
+              <div class="paper-title">${escapeHtml(title)}</div>
+              <div class="small">出題数：${currentQuestions.length}問 / 作成日：${escapeHtml(dateText)} / シード：<span class="mono">${escapeHtml(seedText)}</span></div>
+              <div class="small">対象所属：${escapeHtml(selectedText)}</div>
+            </div>
+            <div class="name-box">
+              <div>氏名</div>
+              <div class="name-line"></div>
+              <div>得点</div>
+              <div class="name-line"></div>
+            </div>
+          </header>
+
+          ${buildLegend()}
+
+          <p class="small">各問について、化学反応式を書き、元素・物質の所属を記号で答えなさい。所属記号は複数回答してよい。</p>
+
+          ${buildQuestionHtml(currentQuestions)}
+          ${buildAnswerHtml(currentQuestions)}
+        </section>
+      `;
+
+      typesetMath(elements.output);
+
+      const shortage = count > candidates.length ? ` 条件に合う問題が ${candidates.length} 問のため、${currentQuestions.length} 問で作成しました。` : "";
+      setStatus(`小テストを生成しました。データ数: ${quizData.reactions.length}問 / 抽出候補: ${candidates.length}問。${shortage}`);
+    }
+
+    async function loadDefaultJson() {
+      try {
+        const response = await fetch("reactions.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        quizData = validateData(data);
+        buildAffiliationControls();
+        setStatus(`reactions.json を読み込みました。登録問題数: ${quizData.reactions.length}問。`);
+      } catch (error) {
+        quizData = validateData(SAMPLE_DATA);
+        buildAffiliationControls();
+        setStatus("reactions.json を自動読み込みできなかったため、内蔵サンプルを表示しています。ローカルで使う場合は python -m http.server で起動するか、ファイル選択から読み込んでください。", true);
+      }
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"') {
+          if (inQuotes && next === '"') {
+            field += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === "," && !inQuotes) {
+          row.push(field);
+          field = "";
+        } else if ((char === "\n" || char === "\r") && !inQuotes) {
+          if (char === "\r" && next === "\n") i++;
+          row.push(field);
+          if (row.some(cell => cell.trim() !== "")) rows.push(row);
+          row = [];
+          field = "";
+        } else {
+          field += char;
+        }
+      }
+
+      row.push(field);
+      if (row.some(cell => cell.trim() !== "")) rows.push(row);
+
+      if (rows.length === 0) return [];
+      const headers = rows[0].map(header => header.trim());
+      return rows.slice(1).map(values => {
+        const obj = {};
+        headers.forEach((header, index) => {
+          obj[header] = values[index] ?? "";
+        });
+        return obj;
+      });
+    }
+
+    async function handleFileLoad(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      try {
+        const text = await file.text();
+        let data;
+        if (file.name.toLowerCase().endsWith(".json")) {
+          data = JSON.parse(text);
+        } else {
+          data = {
+            meta: { title: "無機化学小テスト：各論編", source: file.name },
+            affiliationLabels: AFFILIATION_LABELS,
+            reactions: parseCsv(text),
+          };
+        }
+        quizData = validateData(data);
+        buildAffiliationControls();
+        setStatus(`${file.name} を読み込みました。登録問題数: ${quizData.reactions.length}問。`);
+      } catch (error) {
+        setStatus(`読み込みに失敗しました: ${error.message}`, true);
+      }
+    }
+
+    elements.generateButton.addEventListener("click", generateQuiz);
+    elements.printButton.addEventListener("click", () => window.print());
+    elements.fileInput.addEventListener("change", handleFileLoad);
+
+    elements.selectAllButton.addEventListener("click", () => {
+      document.querySelectorAll('input[name="affiliation"]').forEach(input => input.checked = true);
+    });
+
+    elements.clearButton.addEventListener("click", () => {
+      document.querySelectorAll('input[name="affiliation"]').forEach(input => input.checked = false);
+    });
+
+    loadDefaultJson();
+  </script>
+</body>
+</html>
