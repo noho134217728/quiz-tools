@@ -761,15 +761,26 @@
     function toMhchem(raw) {
       return String(raw ?? "")
         .trim()
-        // 表記ゆれを吸収
+    
+        // 可逆矢印・平衡矢印
+        .replaceAll("⇌", "<=>")
+        .replaceAll("⇄", "<-->")
+        .replaceAll("↔", "<-->")
+    
+        // 一方向矢印
         .replaceAll("→", "->")
-        .replaceAll("=>", "->")
+        .replaceAll("←", "<-")
+    
+        // 「A => B」は一方向矢印として扱う。
+        // ただし「A <=> B」は壊さない。
+        .replace(/(^|[^<])=>/g, "$1->")
+    
         .replaceAll("＝", "=")
-
-        // CSV 側で H_2O, SO_4^2- のように書いていても mhchem 用に直す
+    
+        // H_2O → H2O
         .replace(/_([0-9]+)/g, "$1")
-
-        // 沈殿・気体の矢印を mhchem 記法に寄せる
+    
+        // 沈殿・気体
         .replaceAll("↓", " v")
         .replaceAll("↑", " ^");
     }
